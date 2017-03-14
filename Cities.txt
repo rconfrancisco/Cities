@@ -1,0 +1,21 @@
+New York,Cleveland
+Pittsburgh,New York
+Cleveland,Hawthorne
+Cleveland,Paterson
+Cleveland,Oakland
+Cleveland,Oakland
+Cleveland,Oakland
+Cleveland,Wyckoff
+Cleveland,Ridgewood
+Ridgewood,Glen Rock
+Paterson,Cleveland
+Oakland,Cleveland
+Detroit,Glen Rock
+Tampa,Orlando
+Tampa,Tallahasse
+Tallahasse,Orlando
+Tallahasse,Orlando
+Tampa,Houston
+Tampa,Austin
+Austin,Houston
+
