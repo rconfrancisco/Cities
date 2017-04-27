@@ -1,21 +1,22 @@
-New York,Cleveland
-Pittsburgh,New York
-Cleveland,Hawthorne
-Cleveland,Paterson
-Cleveland,Oakland
-Cleveland,Oakland
-Cleveland,Oakland
-Cleveland,Wyckoff
-Cleveland,Ridgewood
-Ridgewood,Glen Rock
-Paterson,Cleveland
-Oakland,Cleveland
-Detroit,Glen Rock
-Tampa,Orlando
-Tampa,Tallahasse
-Tallahasse,Orlando
-Tallahasse,Orlando
-Tampa,Houston
-Tampa,Austin
-Austin,Houston
+Tokoyo|Paris
+Madrid|Tokoyo
+Paris|Warsaw
+Paris|London
+Paris|Athens
+Paris|Athens
+Paris|Athens
+Paris|Ciaro
+Paris|Caracas
+Caracas|Mexico City
+Caracas|Mexico City
+London|Paris
+Athens|Paris
+Santiago|Mexico City
+Lima|Dakar
+Lima|Rome
+Rome|Dakar
+Rome|Dakar
+Lima|Houston
+Lima|Calgary
+Calgary|Houston
 

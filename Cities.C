@@ -49,8 +49,8 @@ bool checkCitiesExist(const CitiesMap_t& city_map,
      (c_itr2 == city_map.end())) {
     return false;
   }
-  if((c_itr1->second.connectedCities.get()->size() == 0) ||
-     (c_itr2->second.connectedCities.get()->size() == 0)) return false;
+  if((c_itr1->second.connectedCities.get()->empty()) ||
+     (c_itr2->second.connectedCities.get()->empty())) return false;
   
   return true;
 }
@@ -117,7 +117,7 @@ int main(int argc, char* argv[]) {
   std::string   city2;
 
   CitiesMap_t cityMap;
-  while((std::getline(cfile, city1,',')) && 
+  while((std::getline(cfile, city1,'|')) && 
 	(std::getline(cfile, city2,'\n'))) {
     
     insertCity(cityMap, city1, city2);
@@ -125,13 +125,13 @@ int main(int argc, char* argv[]) {
 
   };
 
-  bool yesno = false;
+  bool connected = false;
   if(checkCitiesExist(cityMap, ocity1, ocity2)) {
     NodeQueue_t node_queue;
     seedQueue(cityMap, node_queue, ocity1);
-    yesno = findCity(cityMap, node_queue, ocity2);
+    connected = findCity(cityMap, node_queue, ocity2);
   }
 
-  std::cout << ((yesno) ? "yes" : "no") << std::endl;
+  std::cout << ocity1 << ((connected) ? " is" : " is not") << " connected to " << ocity2 << std::endl;
   return 0;
 }
