@@ -8,9 +8,9 @@
 #include <istream>
 #include <memory>
 
-typedef std::unordered_set<std::string> CitiesSet_t; 
-typedef CitiesSet_t::iterator           CitiesSetItr_t; 
-typedef CitiesSet_t::const_iterator     CitiesSetConstItr_t; 
+using CitiesSet_t         = std::unordered_set<std::string>;
+using CitiesSetItr_t      = CitiesSet_t::iterator;
+using CitiesSetConstItr_t = CitiesSet_t::const_iterator;
 
 struct Node_t {
   bool        visited;
@@ -19,10 +19,10 @@ struct Node_t {
   Node_t(const Node_t& rhs) : visited(rhs.visited), connectedCities(rhs.connectedCities) { }
 };
 
-typedef std::unordered_map<std::string, Node_t> CitiesMap_t;
-typedef CitiesMap_t::iterator                   CitiesMapItr_t;
-typedef CitiesMap_t::const_iterator             CitiesMapConstItr_t;
-typedef std::queue<Node_t>                      NodeQueue_t; 
+using CitiesMap_t        = std::unordered_map<std::string, Node_t>;
+using CitiesMapItr_t      = CitiesMap_t::iterator;
+using CitiesMapConstItr_t = CitiesMap_t::const_iterator;
+using NodeQueue_t         = std::queue<Node_t>;
 
 void insertCity(CitiesMap_t&       city_map, 
 		const std::string& city1, 
