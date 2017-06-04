@@ -2,7 +2,7 @@
 CC = g++
 
 # define any compile-time flags
-CFLAGS = -Wall -g -fpermissive -std=c++11
+CFLAGS = -Wall -g  -std=c++11
 
 # define the executable file 
 TARGET = Cities
