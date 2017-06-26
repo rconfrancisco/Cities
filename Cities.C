@@ -3,6 +3,7 @@
 #include <map>
 #include <unordered_set>
 #include <string>
+#include <utility>
 #include <queue>
 #include <fstream>
 #include <istream>
@@ -15,11 +16,11 @@ using CitiesSetConstItr_t = CitiesSet_t::const_iterator;
 struct Node_t {
   bool        visited;
   std::shared_ptr<CitiesSet_t> connectedCities;
-  Node_t()                  : visited(false),       connectedCities(new CitiesSet_t)     { }
-  Node_t(const Node_t& rhs) : visited(rhs.visited), connectedCities(rhs.connectedCities) { }
+  Node_t() : visited(false) , connectedCities(std::make_shared<CitiesSet_t>()) {};
+
 };
 
-using CitiesMap_t        = std::unordered_map<std::string, Node_t>;
+using CitiesMap_t         = std::unordered_map<std::string, Node_t>;
 using CitiesMapItr_t      = CitiesMap_t::iterator;
 using CitiesMapConstItr_t = CitiesMap_t::const_iterator;
 using NodeQueue_t         = std::queue<Node_t>;
@@ -31,8 +32,9 @@ void insertCity(CitiesMap_t&       city_map,
   CitiesMapItr_t c_itr = city_map.find(city1);
   if(c_itr == city_map.end() ) {
     Node_t      node;
-    city_map[city1]=node;
-    c_itr = city_map.find(city1);
+    std::pair<CitiesMapItr_t, bool> rv;
+    rv = city_map.insert(std::pair<std::string, Node_t>(city1, node));
+    c_itr = rv.first;
   }
   if(c_itr != city_map.end() ) {
     c_itr->second.connectedCities.get()->insert(city2);
